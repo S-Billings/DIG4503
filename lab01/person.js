@@ -1,4 +1,4 @@
-class Person {
+ class Person {
     constructor(name, color){
         // this.[argu.] referce to class person
         this.name = name; 
