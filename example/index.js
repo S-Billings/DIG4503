@@ -1,4 +1,4 @@
-const Header = require("./Header.js");
+const Header = require("./header.js");
 
 let h = new Header(); 
 
