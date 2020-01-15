@@ -9,7 +9,7 @@
     //adding new functions to a class
 
     speak(){
-        console.log("Hi!");
+        console.log(name,color);
     }
 }
 // makes it global to other files: module.exports
