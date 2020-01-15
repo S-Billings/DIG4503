@@ -1,3 +1,5 @@
+ const chalk = require('chalk');
+
  class Person {
     constructor(name, color){
         // this.[argu.] referce to class person
@@ -9,7 +11,7 @@
     //adding new functions to a class
 
     speak(){
-        console.log(name,color);
+        return(chalk.blue("Samantha"));
     }
 }
 // makes it global to other files: module.exports
