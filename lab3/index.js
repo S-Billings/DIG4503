@@ -2,8 +2,6 @@
 const Express = require("express");
 const App = Express();
 const port = 4200;
-// add the html file
-// const index = require("/public");
 
 //watches directory
 App.use("/public",Express.static("public"));
