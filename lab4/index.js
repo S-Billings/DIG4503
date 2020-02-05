@@ -2,12 +2,22 @@ const Express = require("express");
 const App = Express();
 // port 80 
 const port = 4200; 
+//pokemon declaration
+const pokemons = reqiure('json-pokemon');
 
-App.get("/:id/#id", (req, res)=>{
-    res.send(req.params);
+// for(let i = 0; i < 810; i++)
+// {
+//     let id = pokemons.id.getPokemonById();
+//     let color = ;
+//     getPokemon.pop();
+// }
+
+
+App.get("/:id/getPokemon/:id", (req, res)=>{
+    res.send(req.params.id);
 });
 
-App.get("/:name/#name", (req,res)=> {
+App.get("/:name/getPokemon/:name", (req,res)=> {
     res.send(req.param);
 });
 
