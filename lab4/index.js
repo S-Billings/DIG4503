@@ -6,12 +6,17 @@ const port = 4200;
 const pokemons = require('json-pokemon');
 
 
-App.get("/:id/getPokemon/:id", (req, res)=>{
+App.get("/id/:id", (req, res)=>{
+    let pokemonsId = getPokemonById();
+    console.log(pokemonId);
     res.send(req.params.id);
+
 });
 
-App.get("/:name/getPokemon/:name", (req,res)=> {
-    res.send(req.param);
+App.get("/name/:name", (req,res)=> {
+    let pokenames = getPokemonByName();
+    console.log(pokenames);
+    res.send(req.param.name);
 });
 
 App.listen(port, ()=>{
