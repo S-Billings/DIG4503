@@ -7,9 +7,15 @@ App.use(Express.json());
 App.use("/", Express.static("public"));
 
 App.get("/api", (req,res)=>{
-    res.json({"error: Error Message"});
+
+    let result = {"error": "Error Message"};
+
+    if(req.params.value == 5){
+        result ={"secret":"hey bby u want sum fook?"};
+    }
+    res.json(result);
 }); 
 
-App.listen(port()=>{
+App.listen(port,() =>{
     console.log("server is up up up");
 });
