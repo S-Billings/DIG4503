@@ -2,10 +2,14 @@
     <body>
         <script>
             function clicker(){
+
+                let element = document.querySelector("input");
+                console.log()
+
                 fetch("/api".then(Response)=>{
                     return Response.json();
                 }).then(ProcessedResponse)=>{
-                    consol.log(ProcessedResponse);
+                    console.log(ProcessedResponse);
                 }
             }
         </script>
