@@ -10,6 +10,9 @@ const pokeArray = pokemons;
 const name = getPokemons.getPokemonByName();
 const id = getPokemons.getPokemonById();
 
+App.use(Express.json());
+App.use("/", Express.static("public"));
+
 
 App.get("/name/:name", (req,res)=>{
      
@@ -22,17 +25,19 @@ App.get("/name/:name", (req,res)=>{
         }
     });
 
+    
+
     //console.log(result);
 
-    if (result.error){
-        console.log(chalk.red(req.path));
-    }
-    else{
-        console.log(chalk.green(req.path));
-        console.log(result);
-        // console.log(result);
-    }
-    return result;
+    // if (result.error){
+    //     console.log(chalk.red(req.path));
+    // }
+    // else{
+    //     console.log(chalk.green(req.path));
+    //     console.log(result);
+    //     // console.log(result);
+    // }
+    // return result;
 });
 
 App.get("/id/:id", (req, res)=>{
