@@ -13,7 +13,7 @@
 
                 }).then((processed) =>{
 
-                    let resultArea = document.querySelcetor("#response");
+                    let resultArea = document.querySelector("#response");
 
                     if(processed.error){
                         resultArea.innerHTML = processed.error;
@@ -27,7 +27,7 @@
                 fetch("/name/" + pokemonName.value).then((res)=>{
 
                 }).then((processed)=>{
-                    let resultArea = document.querySelctor("#response");
+                    let resultArea = document.querySelector("#response");
                     if(process.error){
                         resultArea.innerHTML = processed.error;
                     }
