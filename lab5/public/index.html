@@ -9,6 +9,7 @@
                 let pokemonId = document.querySelector("#pokeId");
 
                 fetch("/id/" + pokemonId.value).then((res)=>{
+                    return res.json();
 
                 }).then((processed) =>{
 
