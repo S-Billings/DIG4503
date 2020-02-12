@@ -20,6 +20,7 @@
                     else{
                         resultArea.innerHTML = pokemonId;
                     }
+                    console.log()
                 });
 
                 fetch("/name/" + pokemonName.value).then((res)=>{
@@ -36,12 +37,12 @@
 
             }
         </script>
-        <form onsubmit="clicker()">
+        <form onsubmit="clicker(event)">
             <h4>Please enter an ID number:</h4>
             <input id="pokeId" type="text">
             <button>Submit!</button>
         </form>
-        <form onsubmit="clicker()">
+        <form onsubmit="clicker(event)">
             <h4>Please enter a Pokemon Name:</h4>
             <input id="pokeName" type="text">
             <button>Submit</button>
