@@ -1,64 +1,40 @@
-const Express = require ("express");
+const Express = require("express");
 const App = Express();
 const port = 80;
-const chalk = require("Chalk"); 
+const chalk = require("chalk");
+const pokemon = require("json-pokemon");
 
-const pokemons = require("json-pokemon");
-const getPokemons = require("json-pokemon/getPokemon");
-const pokeArray = pokemons;
+App.get("/id/:id", (req,res)=>{
+    let result = {"error": "Invalid"};
 
-const name = getPokemons.getPokemonByName();
-const id = getPokemons.getPokemonById();
+    pokemon.forEach((value) =>{
+        if (value.id == req.params.id){
+            result = value;
+        }
+    });
 
+    if(result.error){
+        console.log(chalk.red(req.path));
+    } else{
+        console.log(chalk.green(req.path));
+    }
+    res.send(result);
+});
 
 App.get("/name/:name", (req,res)=>{
-     
-    let result = {"error": "Nothing found that matches that. :C"};
-    
-    pokeArray.forEach((value)=>{
-        if(value.name.toLowerCase() == req.params.name){
-             let index = value.id - 1;
-             result = pokeArray[index];
+    let result = {"error": "Invalid"};
+
+    pokemon.forEach((value) =>{
+        if (value.id == req.params.id){
+            result = value;
         }
     });
 
-    //console.log(result);
-
-    if (result.error){
+    if(result.error){
         console.log(chalk.red(req.path));
-    }
-    else{
+    } else{
         console.log(chalk.green(req.path));
-        console.log(result);
-        // console.log(result);
     }
-    return result;
+    res.send(result);
 });
 
-App.get("/id/:id", (req, res)=>{
-    
-    let result = {"error": "Nothing found that matches that. :C"};
-    
-    pokeArray.forEach((value)=>{
-        if(value.id == req.params.id){
-             let index = value.id - 1;
-             result = pokeArray[index];
-        }
-    });
-//debugging
-    //console.log(result);
-
-    if (result.error){
-        console.log(chalk.red(req.path));
-    }
-    else{
-        console.log(chalk.green(req.path));
-        console.log(result);
-        // console.log(result);
-    }
-    return result;
-}); 
-
-App.listen(port,()=>{
-    console.log("Server is up, up, up.");
-});

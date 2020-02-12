@@ -3,8 +3,8 @@
         <script>
             fucntion clicker(event){
                 event.preventDefault();
-                let pokemonName = document.querySelector(#pokeName);
-                let pokemonId = document.querySelector(#pokeId);
+                let pokemonName = document.querySelector("#pokeName");
+                let pokemonId = document.querySelector("#pokeId");
 
                 fetch("/id/" + pokemonId.value).then((res)=>{
 
@@ -38,7 +38,7 @@
         </form>
         <form onsubmit="clicker()">
             <input id="pokeName" type="text">
-            <button onclick = clicker()>Submit</button>
+            <button>Submit</button>
         </form>
         <div id ="response">
 
