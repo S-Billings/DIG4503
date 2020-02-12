@@ -38,3 +38,6 @@ App.get("/name/:name", (req,res)=>{
     res.send(result);
 });
 
+App.listen(port,()=>{
+    console.log("Server is up, up, up.");
+});
