@@ -4,6 +4,9 @@ const port = 420;
 const chalk = require("Chalk"); 
 const pokemon = require("json-pokemon");
 
+App.use(Express.json());
+App.use("/", Express.static("/public"));
+
 App.get("/id/:id", (req,res)=>{
     let result = {"error": "Invalid"};
 

@@ -1,20 +1,24 @@
 <html>
     <body>
         <script>
-            fucntion clicker(event){
+            function clicker(event){
+                
                 event.preventDefault();
+
                 let pokemonName = document.querySelector("#pokeName");
                 let pokemonId = document.querySelector("#pokeId");
 
                 fetch("/id/" + pokemonId.value).then((res)=>{
 
                 }).then((processed) =>{
+
                     let resultArea = document.querySelcetor("#response");
+
                     if(processed.error){
                         resultArea.innerHTML = processed.error;
                     }
                     else{
-                        resultArea.innerHTML = ${pokemonId};
+                        resultArea.innerHTML = pokemonId;
                     }
                 });
 
@@ -26,7 +30,7 @@
                         resultArea.innerHTML = processed.error;
                     }
                     else{
-                        resultArea.innerHTML = ${pokemonName};
+                        resultArea.innerHTML = pokemonName;
                     }
                 });
 
