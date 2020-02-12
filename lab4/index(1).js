@@ -1,6 +1,6 @@
 const Express = require ("express");
 const App = Express();
-const port = 4200;
+const port = 80;
 const chalk = require("Chalk"); 
 
 const pokemons = require("json-pokemon");
