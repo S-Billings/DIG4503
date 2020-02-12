@@ -19,9 +19,9 @@
                         resultArea.innerHTML = processed.error;
                     }
                     else{
-                        resultArea.innerHTML = pokemonId;
+                        resultArea.innerHTML = result;
                     }
-                    console.log()
+                    console.log(result);
                 });
 
                 fetch("/name/" + pokemonName.value).then((res)=>{
@@ -32,12 +32,13 @@
                         resultArea.innerHTML = processed.error;
                     }
                     else{
-                        resultArea.innerHTML = pokemonName;
+                        resultArea.innerHTML = result;
                     }
                 });
 
             }
         </script>
+        
         <form onsubmit="clicker(event)">
             <h4>Please enter an ID number:</h4>
             <input id="pokeId" type="text">
