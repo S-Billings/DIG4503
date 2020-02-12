@@ -4,7 +4,7 @@ const port = 80;
 const chalk = require("Chalk"); 
 
 const pokemons = require("json-pokemon");
-const getPokemons = require("json-pokemon/getPokemon");
+
 const pokeArray = pokemons;
 
 const name = getPokemons.getPokemonByName();
