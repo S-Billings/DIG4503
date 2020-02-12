@@ -28,7 +28,7 @@
 
                 }).then((processed)=>{
                     let resultArea = document.querySelector("#response");
-                    if(process.error){
+                    if(processed.error){
                         resultArea.innerHTML = processed.error;
                     }
                     else{
