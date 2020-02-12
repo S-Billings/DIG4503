@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <script>
+            fucntion clicker(event){
+                event.preventDefault();
+                let pokemonName = document.querySelector(#pokeName);
+                let pokemonId = document.querySelector(#pokeId);
+
+                fetch("/name/" + pokemonName.value).then((res)=>{
+
+                }).then(processed)=>{
+                    let resultArea = document.querySelctor("#response");
+                    if(process.error){
+                        resultArea.innerHTML = processed.error;
+                    }
+                    else{
+                        resultArea.innerHTML = ${pokemonName};
+                    }
+                }
+
+            }
+        </script>
+        <form onsubmit="clicker()">
+            <input id="pokeId" type="text">
+            <button>Submit!</button>
+        </form>
+        <form onsubmit="clicker()">
+            <input id="pokeName" type="text">
+            <button onclick = clicker()>Submit</button>
+        </form>
+        <div id ="response">
+
+        </div>
+    </body>
+</html>
