@@ -1,8 +1,11 @@
 const Express = require("express");
 const App = Express();
-const port = 80;
+const port = 4200;
 const chalk = require("chalk");
 const pokemon = require("json-pokemon");
+
+App.use(Express.json());
+App.use("/", Express.static("public"));
 
 App.get("/id/:id", (req,res)=>{
     let result = {"error": "Invalid"};
