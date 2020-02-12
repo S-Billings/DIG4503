@@ -6,9 +6,21 @@
                 let pokemonName = document.querySelector(#pokeName);
                 let pokemonId = document.querySelector(#pokeId);
 
+                fetch("/id/" + pokemonId.value).then((res)=>{
+
+                }).then((processed) =>{
+                    let resultArea = document.querySelcetor("#response");
+                    if(processed.error){
+                        resultArea.innerHTML = processed.error;
+                    }
+                    else{
+                        resultArea.innerHTML = ${pokemonId};
+                    }
+                });
+
                 fetch("/name/" + pokemonName.value).then((res)=>{
 
-                }).then(processed)=>{
+                }).then((processed)=>{
                     let resultArea = document.querySelctor("#response");
                     if(process.error){
                         resultArea.innerHTML = processed.error;
@@ -16,7 +28,7 @@
                     else{
                         resultArea.innerHTML = ${pokemonName};
                     }
-                }
+                });
 
             }
         </script>
