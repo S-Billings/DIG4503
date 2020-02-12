@@ -1,21 +1,64 @@
-const Express = require("express");
-const App = Express(); 
+const Express = require ("express");
+const App = Express();
 const port = 80;
+const chalk = require("Chalk"); 
 
-App.use(Express.json());
+const pokemons = require("json-pokemon");
+const getPokemons = require("json-pokemon/getPokemon");
+const pokeArray = pokemons;
 
-App.use("/", Express.static("public"));
+const name = getPokemons.getPokemonByName();
+const id = getPokemons.getPokemonById();
 
-App.get("/api", (req,res)=>{
 
-    let result = {"error": "Error Message"};
+App.get("/name/:name", (req,res)=>{
+     
+    let result = {"error": "Nothing found that matches that. :C"};
+    
+    pokeArray.forEach((value)=>{
+        if(value.name.toLowerCase() == req.params.name){
+             let index = value.id - 1;
+             result = pokeArray[index];
+        }
+    });
 
-    if(req.params.value == 5){
-        result ={"secret":"hey bby u want sum fook?"};
+    //console.log(result);
+
+    if (result.error){
+        console.log(chalk.red(req.path));
     }
-    res.json(result);
+    else{
+        console.log(chalk.green(req.path));
+        console.log(result);
+        // console.log(result);
+    }
+    return result;
+});
+
+App.get("/id/:id", (req, res)=>{
+    
+    let result = {"error": "Nothing found that matches that. :C"};
+    
+    pokeArray.forEach((value)=>{
+        if(value.id == req.params.id){
+             let index = value.id - 1;
+             result = pokeArray[index];
+        }
+    });
+//debugging
+    //console.log(result);
+
+    if (result.error){
+        console.log(chalk.red(req.path));
+    }
+    else{
+        console.log(chalk.green(req.path));
+        console.log(result);
+        // console.log(result);
+    }
+    return result;
 }); 
 
-App.listen(port,() =>{
-    console.log("server is up up up");
+App.listen(port,()=>{
+    console.log("Server is up, up, up.");
 });
