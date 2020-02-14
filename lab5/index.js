@@ -5,9 +5,10 @@ const chalk = require("Chalk");
 const pokemon = require("json-pokemon");
 
 App.use(Express.json());
-App.use("/", Express.static("/public"));
+App.get("/", Express.static("/public"));
 
-App.get("/id/", (req,res)=>{
+App.get("/id/:id", (req,res)=>{
+    
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value) =>{
@@ -24,7 +25,7 @@ App.get("/id/", (req,res)=>{
     res.send(result);
 });
 
-App.get("/name/", (req,res)=>{
+App.get("/name/:name", (req,res)=>{
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value) =>{

@@ -1,11 +1,13 @@
 <html>
+    <head>
+        <title>Lab 5 - Samantha Billings</title>
+    </head>
     <body>
         <script>
-            function clicker(event){
+            function idClick(event){
                 
                 event.preventDefault();
 
-                let pokemonName = document.querySelector("#pokeName");
                 let pokemonId = document.querySelector("#pokeId");
 
                 fetch("/id/" + pokemonId.value).then((res)=>{
@@ -19,43 +21,44 @@
                         resultArea.innerHTML = processed.error;
                     }
                     else{
-                        resultArea.innerHTML = result;
+                        resultArea.innerHTML = processed.name;
                     }
                     console.log(result);
                 });
 
-                fetch("/name/" + pokemonName.value).then((res)=>{
-
-                }).then((processed)=>{
-                    let resultArea = document.querySelector("#response");
-                    if(processed.error){
-                        resultArea.innerHTML = processed.error;
-                    }
-                    else{
-                        resultArea.innerHTML = result;
-                    }
-                });
 
             }
+
+            function nameClick(event){
+                event.preventDefault();
+
+                let pokemonName = document.querySelector("#pokeName");
+
+                fetch("/name/" + pokemonName.value).then((res)=>{
+                    return res.json();
+
+                }).then((processed)=>{
+                
+                    let resultArea = document.querySelector("#response");
+
+                if(processed.error){
+                    resultArea.innerHTML = processed.error;
+                }
+                else{
+                    resultArea.innerHTML = processed.name;
+                }
+                });
+                
+            }
         </script>
-<<<<<<< HEAD
-        <form onsubmit="clicker()">
-            <h4>Enter a ID number:</h4>
-            <input id="pokeId" type="text">
-            <button>Submit!</button>
-        </form>
-        <form onsubmit="clicker()">
-            <h4>Enter a Pokemon Name</h4>
-=======
         
-        <form onsubmit="clicker(event)">
+        <form onsubmit="idClick(event)">
             <h4>Please enter an ID number:</h4>
             <input id="pokeId" type="text">
             <button>Submit!</button>
         </form>
-        <form onsubmit="clicker(event)">
+        <form onsubmit="nameClick(event)">
             <h4>Please enter a Pokemon Name:</h4>
->>>>>>> 21ef3c707c2ed958bde0d0837ef03a014fd29d16
             <input id="pokeName" type="text">
             <button>Submit</button>
         </form>
