@@ -7,7 +7,7 @@ const pokemon = require("json-pokemon");
 App.use(Express.json());
 App.use("/", Express.static("/public"));
 
-App.get("/id/:id", (req,res)=>{
+App.get("/id/", (req,res)=>{
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value) =>{
@@ -24,7 +24,7 @@ App.get("/id/:id", (req,res)=>{
     res.send(result);
 });
 
-App.get("/name/:name", (req,res)=>{
+App.get("/name/", (req,res)=>{
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value) =>{
