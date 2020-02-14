@@ -1,18 +1,21 @@
 const Express = require("express");
 const App = Express();
 const port = 420;
-const chalk = require("Chalk"); 
+
+const chalk = require("chalk"); 
 const pokemon = require("json-pokemon");
 
 App.use(Express.json());
-App.get("/", Express.static("/public"));
+
+App.use("/", Express.static("/public"));
 
 App.get("/id/:id", (req,res)=>{
-    
+
     let result = {"error": "Invalid"};
+    let pokemonID = req.params.id;
 
     pokemon.forEach((value) =>{
-        if (value.id == req.params.id){
+        if (value.id == pokemonID){
             result = value;
         }
     });
@@ -29,7 +32,9 @@ App.get("/name/:name", (req,res)=>{
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value) =>{
-        if (value.id == req.params.id){
+
+        let pokemonName = req.params.name;
+        if (value.id == pokemonName){
             result = value;
         }
     });
