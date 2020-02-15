@@ -35,7 +35,7 @@ App.get("/name/:name", (req,res)=>{
     pokemon.forEach((value) =>{
 
         let pokemonName = pokemonNames;
-        if (value.name.toLowerCase() == pokemonNames){
+        if (value.name == pokemonNames){
             result = value;
         }
     });
