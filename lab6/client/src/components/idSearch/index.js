@@ -9,7 +9,7 @@ class idSearch extends React.Component{
         fetch("http://localhost:80/id/"+ pokeID.value).then((res)=>{
             return res.json();
         }).then((processed)=>{
-            let result =document.querySelector(#response);
+            let result =document.querySelector('#response');
             if(processed.error){
                 result.innerHTML = processed.error;
             } else{

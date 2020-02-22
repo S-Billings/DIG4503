@@ -10,7 +10,7 @@ App.use(cors());
 
 App.use(Express.json());
 
-App.use("/", Express.static("client/build"));
+App.use("/", Express.static("client"));
 
 App.get("/id/:id", (req,res)=>{
 

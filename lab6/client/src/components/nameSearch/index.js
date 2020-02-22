@@ -6,10 +6,10 @@ class nameSearch extends React.Component{
 
         let pokeName = document.querySelector("#pokeName");
 
-        fetch("http://localhost:80/id/"+ pokeName.value).then((res)=>{
+        fetch("http://localhost:80/name/"+ pokeName.value).then((res)=>{
             return res.json();
         }).then((processed)=>{
-            let result =document.querySelector(#response);
+            let result =document.querySelector('#response');
             if(processed.error){
                 result.innerHTML = processed.error;
             } else{
