@@ -6,11 +6,11 @@ const chalk = require("chalk");
 const pokemon = require("json-pokemon");
 
 const cors = require("cors");
-App.use(cors());
+App.use(cors());aZSQ
 
 App.use(Express.json());
 
-App.use("/", Express.static("client"));
+App.use("/", Express.static("client/build"));
 
 App.get("/id/:id", (req,res)=>{
 
