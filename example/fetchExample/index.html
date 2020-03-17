@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <script>
+            function clickerevent(){
+
+                let element = document.querySelector("input");
+                console.log()
+
+                fetch("/api/".then(Response)=>{
+                    return Response.json();
+                }).then(ProcessedResponse)=>{
+                    console.log(ProcessedResponse);
+                }
+            }
+        </script>
+        <form>
+            <input type="text">
+            <button onclick="clicker()">Click on me...</button>
+        </form>
+        
+    </body>
+</html>
