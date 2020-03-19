@@ -20,7 +20,7 @@ class App extends React.Component{
     getId(){
         let pokeId = document.querySelector("#pokemonId");
 
-        fetch("/api/pokemon/id/" + id.value).then((res)=>{return res.json();}).then((processed)=> {
+        fetch("/api/pokemon/id/" + pokeId.value).then((res)=>{return res.json();}).then((processed)=> {
             
             let resultElement = document.querySelector("#results");
 
