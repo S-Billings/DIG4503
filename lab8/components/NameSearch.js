@@ -1,35 +1,30 @@
+class NameSearch extends React.Component{
 
-const port = 80;
+    getName(){
 
-const pokemon = require("json-pokemon");
+        let name = document.querySelector("#pokemonName");
 
-const cors = require("cors");
-App.use(cors());
+        fetch("/api/pokemon/name" + name.value).then((res)=>{return res.json();}).then((processed)=>{
+            
+            let resultElement = document.querySelector("#results");
 
-App.use(Express.json());
-
-// App.use("/", Express.static("client/build"));
-
-App.get("/name/:name", (req,res)=>{
-    let result = {"error": "Invalid"};
-    let pokemonNames = req.params.name;
-
-    pokemon.forEach((value) =>{
-
-        let pokemonName = pokemonNames;
-        if (value.name == pokemonNames){
-            result = value;
-        }
-    });
-
-    if(result.error){
-        console.log(chalk.red(req.path));
-    } else{
-        console.log(chalk.green(req.path));
+            if(processed.error){
+                resultElement.innerHTML = "Could not find your Search";
+            } else{
+                resultElement.innerHTML = "The Pokemon ID is:"+ processed.id+ "and you chose:"+processed.name+".";
+            }
+        });
     }
-    res.send(result);
-});
 
-App.listen(port,()=>{
-    console.log("Server is up, up, up.");
-});
+    render(){
+        return(
+            <div>
+                <input type="text" id="pokemonName"/>
+                <button onClick={() => {this.getName()}}>Search</button>
+                <div id="results"></div>
+            </div>
+        )
+    }
+}
+
+export default NameSearch;
