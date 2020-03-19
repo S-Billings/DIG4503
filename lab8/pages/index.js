@@ -9,9 +9,9 @@ class NameSearch extends React.Component{
             let resultElement = document.querySelector("#results");
 
             if(processed.error){
-                resultElement.innerHTML = "Could not find your Search";
+                resultElement.innerHTML = "Could not find your search. Please try again.";
             } else{
-                resultElement.innerHTML = "The Pokemon ID is:"+ processed.id+ "and you chose:"+processed.name+".";
+                resultElement.innerHTML = "The Pokemon ID is: "+ processed.id+ " and you chose: "+processed.name+".";
             }
         });
     }
