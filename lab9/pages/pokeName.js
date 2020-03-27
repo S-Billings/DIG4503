@@ -16,11 +16,16 @@ class App extends React.Component{
     }
 render(){
     return(
-        <div>        
+        <div>
+            <head>Search Pokemon by Name</head>        
             <h3>Search by Name:</h3>
                 <input type="text" id="pokemonName"/>
                 <button onClick={() => {this.getName()}}>Search</button>
                 <div id="results"></div>
+                <div>
+                    <link href= "pokeId.js">Click here to search by Id</link>
+                    <link href= "pokeType">Click here to search by Type</link>
+                </div>
         </div>
 
     )
