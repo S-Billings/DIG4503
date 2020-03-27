@@ -14,8 +14,7 @@ class App extends React.Component{
             }
         });
     }
-}
-render()
+render(){
     return(
         <div>        
             <h3>Search by Name:</h3>
@@ -25,3 +24,6 @@ render()
         </div>
 
     )
+    };
+}
+    export default App;

@@ -14,4 +14,15 @@ class App extends React.Component{
             }
         });
     }
+    render(){
+        return(
+            <div>        
+            <h3>Search by ID:</h3>
+                <input type="text" id="pokemonId"/>
+                <button onClick={() => {this.getId()}}>Search</button>
+                <div id="results"></div>
+        </div>
+        )
+    }
 }
+export default App
