@@ -5,7 +5,7 @@ class App extends React.Component{
     getType(){
         let type = document.querySelector("#pokeType");
 
-        fetch("/api/pokemon/typeList"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
+        fetch("/api/pokemon/"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
             let resultElement = document.querySelector("#results");
 
             if(processed.error){
