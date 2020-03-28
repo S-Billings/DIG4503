@@ -1,17 +1,17 @@
 import Head from "next/head";
 import Link from "next/link";
-import React from "react";
-class App extends React.Components{
+
+class App extends React.Component{
     getType(){
         let type = document.querySelector("#pokeType");
 
-        fetch("/api/pokemon/type"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
+        fetch("/api/pokemon/typeList"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
             let resultElement = document.querySelector("#results");
 
             if(processed.error){
                 resultElement.innerHTML = "Types not found, try again.";
             }else{
-                resultElement.innerHTML = "You chose "+type.processed+" type, and the following pokemons match: "+name.processed+".";
+                resultElement.innerHTML = "You chose "+typeList.processed+" type, and the following pokemons match: "+name.processed+".";
             }
         });
     }
@@ -26,9 +26,9 @@ class App extends React.Components{
                 <button onClick = {() =>{this.getType()}}>Search</button>
                 <div id = "results"></div>
                 <div>
-                    <Link href= "pokeName.js">Click here to search by Name</Link>
+                    <Link href= "pokeName.js"><a>Click here to search by Name</a></Link>
                     <br></br>
-                    <Link href= "pokeId.js">Click here to search by ID</Link>
+                    <Link href= "pokeId.js"><a>Click here to search by ID</a></Link>
                 </div>
             </div>
         )

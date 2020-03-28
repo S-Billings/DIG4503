@@ -50,30 +50,12 @@ class App extends React.Component{
 
   render(){
       return(
-          
-          <div class="body">
-              <h3>Search by Name:</h3>
-              <input type="text" id="pokemonName" class="pokeName"/>
-              <button onClick={() => {this.getName()}}>Search</button>
-              <div>
-                  <br/>
-                  <h3>Search by ID</h3>
-              <input type="text" id="pokemonId" class="pokeId"/>
-                  <button onClick = {() => {this.getId()}}>Search</button>
-                  </div>
-                  <br/>
-                  <h3>Search by Type</h3>
-            <div>
-                <input type = "text" id = "pokeType"/>
-                <button onClick = {() =>{this.getType()}}>Search</button>
-                <br></br>
-              <div id="results"></div>
-              <Link href='/pokeId'>
-                  <a>
-                    Search by Id
-                  </a>
-              </Link>
-          </div>
+          <div class= "home">
+              <Link href="/pokeName">Search Pokemon by Name</Link>
+              <br></br>
+              <Link href="/pokeId">Search Pokemon by ID</Link>
+              <br></br>
+              <Link href="/pokeType">Search Pokemon by Type</Link>
           </div>
       )
   }

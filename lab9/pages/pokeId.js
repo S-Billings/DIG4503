@@ -11,7 +11,7 @@ class App extends React.Component{
             if(processed.error){
                 resultElement.innerHTML ="Could not find your search. Please try again.";
             } else{
-                resultElement.innerHTML = "The Pokemon ID you entered is: "+ processed.id+" and the ID belongs to: "+processed.name+".";
+                resultElement.innerHTML = "The Pokemon ID you entered is: "+ processed.id+" and the ID belongs to: "+processed.name+". This Pokemon is a "+processed.typeList+" type.";
 
             }
         });

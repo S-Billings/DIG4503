@@ -12,7 +12,7 @@ class App extends React.Component{
             if(processed.error){
                 resultElement.innerHTML = "Could not find your search. Please try again.";
             } else{
-                resultElement.innerHTML = "The Pokemon ID is: "+ processed.id+ " and you chose: "+processed.name+".";
+                resultElement.innerHTML = "The Pokemon ID is: "+ processed.id+ " and you chose: "+processed.name+". This Pokemon is a "+processed.typeList+" type.";
             }
         });
     }
@@ -25,8 +25,9 @@ render(){
                 <button onClick={() => {this.getName()}}>Search</button>
                 <div id="results"></div>
                 <div>
-                    <link href= "pokeId.js">Click here to search by Id</link>
-                    <link href= "pokeType">Click here to search by Type</link>
+                    <Link href= "/pokeId">Click here to search by Id</Link>
+                    <br></br>
+                    <Link href= "/pokeType">Click here to search by Type</Link>
                 </div>
         </div>
 
