@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Link from "next/link";
 class App extends React.Component{
 
   
@@ -35,7 +37,7 @@ class App extends React.Component{
   getType(){
     let type = document.querySelector("#pokeType");
 
-    fetch("/api/pokemon/type"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
+    fetch("/api/pokemon/"+ type.value).then((res)=> {return res.json();}).then((processed)=>{
         let resultElement = document.querySelector("#results");
 
         if(processed.error){
@@ -49,14 +51,14 @@ class App extends React.Component{
   render(){
       return(
           
-          <div>
+          <div class="body">
               <h3>Search by Name:</h3>
-              <input type="text" id="pokemonName"/>
+              <input type="text" id="pokemonName" class="pokeName"/>
               <button onClick={() => {this.getName()}}>Search</button>
               <div>
                   <br/>
                   <h3>Search by ID</h3>
-              <input type="text" id="pokemonId"/>
+              <input type="text" id="pokemonId" class="pokeId"/>
                   <button onClick = {() => {this.getId()}}>Search</button>
                   </div>
                   <br/>
@@ -66,6 +68,11 @@ class App extends React.Component{
                 <button onClick = {() =>{this.getType()}}>Search</button>
                 <br></br>
               <div id="results"></div>
+              <Link href='/pokeId'>
+                  <a>
+                    Search by Id
+                  </a>
+              </Link>
           </div>
           </div>
       )

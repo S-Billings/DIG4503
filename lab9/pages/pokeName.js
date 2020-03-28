@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Link from "next/link";
 class App extends React.Component{
     getName(){
 

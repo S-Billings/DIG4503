@@ -1,4 +1,7 @@
-class TypeSearch extends React.Components{
+import Head from "next/head";
+import Link from "next/link";
+import React from "react";
+class App extends React.Components{
     getType(){
         let type = document.querySelector("#pokeType");
 
@@ -10,18 +13,22 @@ class TypeSearch extends React.Components{
             }else{
                 resultElement.innerHTML = "You chose "+type.processed+" type, and the following pokemons match: "+name.processed+".";
             }
-        })
+        });
     }
 
     render(){
         return(
             <div>
+                <Head>
+                    <a>Search by type:</a>
+                </Head>
                 <input type = "text" id = "pokeType"/>
                 <button onClick = {() =>{this.getType()}}>Search</button>
                 <div id = "results"></div>
                 <div>
-                    <link href= "pokeName.js">Click here to search by Name</link>
-                    <link href= "pokeId.js">Click here to search by ID</link>
+                    <Link href= "pokeName.js">Click here to search by Name</Link>
+                    <br></br>
+                    <Link href= "pokeId.js">Click here to search by ID</Link>
                 </div>
             </div>
         )
@@ -29,4 +36,4 @@ class TypeSearch extends React.Components{
 
 }
 
-export default TypeSearch;
+export default App;

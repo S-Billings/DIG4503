@@ -1,0 +1,16 @@
+.result{
+    color: rgb(15,163,177);
+    background-color: rgb(247,157,92);
+    border: 5px dashed slateblue; 
+    
+}
+
+.pokeName{
+    box-shadow: 5px 4px rgb(245,47,87);
+    color: #ffa987;
+}
+.body{
+    background-image: url("/img/pokeball.png");
+    background-color: slategrey;
+    font-size: 18px;
+}

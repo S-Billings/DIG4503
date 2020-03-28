@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Link from "next/link";
 class App extends React.Component{
     getId(){
         let pokeId = document.querySelector("#pokemonId");
@@ -23,8 +25,9 @@ class App extends React.Component{
                 <button onClick={() => {this.getId()}}>Search</button>
                 <div id="results"></div>
                 <div>
-                    <Link href="pokeName.js">Click here to search by name.</Link>
-                    <Link href = "pokeType.js">Click here to search by types</Link>
+                    <Link href="/pokeName">Click here to search by name.</Link>
+                    <br></br>
+                    <Link href = "/pokeType">Click here to search by types</Link>
                 </div>
         </div>
         )
