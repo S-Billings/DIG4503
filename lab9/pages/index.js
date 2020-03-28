@@ -61,7 +61,7 @@ class App extends React.Component{
                   </div>
                   <br/>
                   <h3>Search by Type</h3>
-                  <div>
+            <div>
                 <input type = "text" id = "pokeType"/>
                 <button onClick = {() =>{this.getType()}}>Search</button>
                 <br></br>
