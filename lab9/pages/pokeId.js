@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles from "../styling.module.css"
 class App extends React.Component{
     getId(){
         let pokeId = document.querySelector("#pokemonId");
@@ -18,17 +19,18 @@ class App extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className={styles.general}>
                 <Head><title>Find a Pokemon by ID</title></Head>        
-            <h3>Search by ID:</h3>
-                <input type="text" id="pokemonId"/>
-                <button onClick={() => {this.getId()}}>Search</button>
-                <div id="results"></div>
-                <div>
-                    <Link href="/pokeName">Click here to search by name.</Link>
+                <h3>Search by ID:</h3>
+                <input className={styles.input} type="text" id="pokemonId" className={styles.input}/>
+                <button className ={styles.button} onClick={() => {this.getId()}}>Search</button>
+                
+                <div className={styles.links}>
+                    <Link href="/pokeName">Click here to search by name</Link>
                     <br></br>
                     <Link href = "/pokeType">Click here to search by types</Link>
                 </div>
+                <div id="results" className={styles.result}></div>
         </div>
         )
     }

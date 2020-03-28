@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles from "../styling.module.css";
 class App extends React.Component{
     getName(){
 
@@ -18,17 +19,17 @@ class App extends React.Component{
     }
 render(){
     return(
-        <div>
+        <div className={styles.general}>
             <head>Search Pokemon by Name</head>        
             <h3>Search by Name:</h3>
-                <input type="text" id="pokemonName"/>
-                <button onClick={() => {this.getName()}}>Search</button>
-                <div id="results"></div>
-                <div>
-                    <Link href= "/pokeId">Click here to search by Id</Link>
+                <input className={styles.input} type="text" id="pokemonName"/>
+                <button className ={styles.button} onClick={() => {this.getName()}}>Search</button>
+                <div className={styles.links}>
+                    <Link href= "/pokeId"><a>Click here to search by Id</a></Link>
                     <br></br>
-                    <Link href= "/pokeType">Click here to search by Type</Link>
+                    <Link href= "/pokeType"><a>Click here to search by Type</a></Link>
                 </div>
+                <div id="results" className={styles.result}></div>
         </div>
 
     )
