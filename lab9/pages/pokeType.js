@@ -5,9 +5,9 @@ import styles from "../styling.module.css";
 class App extends React.Component{
 
     getType(){
-        let type = document.querySelector("#pokemonType");
+        let typeList = document.querySelector("#pokemonType");
 
-        fetch("/api/pokemon/type"+type.value).then((res)=>{return res.json();}).then((processed)=>{
+        fetch("/api/pokemon/type"+typeList.value).then((res)=>{return res.json();}).then((processed)=>{
             let resultElement = document.querySelector("#results");
 
             if(processed.error){
