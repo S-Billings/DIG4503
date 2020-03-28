@@ -20,7 +20,7 @@ class App extends React.Component{
 render(){
     return(
         <div className={styles.general}>
-            <head>Search Pokemon by Name</head>        
+            <Head><a>Search Pokemon by Name</a></Head>        
             <h3>Search by Name:</h3>
                 <input className={styles.input} type="text" id="pokemonName"/>
                 <button className ={styles.button} onClick={() => {this.getName()}}>Search</button>
