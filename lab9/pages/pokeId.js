@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styling.module.css"
+import styles from "../styling.module.css";
 class App extends React.Component{
     getId(){
         let pokeId = document.querySelector("#pokemonId");
