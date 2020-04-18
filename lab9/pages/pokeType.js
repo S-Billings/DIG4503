@@ -2,12 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styling.module.css";
 
+
 class App extends React.Component{
 
     getType(){
         let typeList = document.querySelector("#pokemonType");
 
-        fetch("/api/pokemon/type"+typeList.value).then((res)=>{return res.json();}).then((processed)=>{
+        fetch("/api/pokemon/type/"+typeList.value).then((res)=>{return res.json();}).then((processed)=>{
             let resultElement = document.querySelector("#results");
 
             if(processed.error){
@@ -23,17 +24,20 @@ class App extends React.Component{
     render(){
         return(
             <div className={styles.general}>
-                <Head><title>Find a Pokemon by Type</title></Head>        
+                <Head><title>Find a Pokemon by Type</title></Head>    
                 <h3>Search by Type:</h3>
                 <input className={styles.input} type="text" id="pokemonType" className={styles.input}/>
                 <button className ={styles.button} onClick={() => {this.getType()}}>Search</button>
                 
                 <div className={styles.links}>
-                    <Link href="/pokeName"><a>Click here to search by name</a></Link>
+                    <Link href="/pokeName"><a className={styles.pokeName}>Click here to search by name</a></Link>
                     <br></br>
-                    <Link href = "/pokeId"><a>Click here to search by ID</a></Link>
+                    <Link href= "/pokeId"><a className={styles.pokeId}>Click here to search by Id</a></Link>
+                    <br></br>
+                    <Link href="/index.js"><a className={styles.begin}>Click here to go back to the home page</a></Link>
+
                 </div>
-                <div id="results" className={styles.result}></div>
+                <div id="results" className={styles.result}>Your Results:</div>
         </div>
         )
     }

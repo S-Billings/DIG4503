@@ -8,5 +8,8 @@ body{
             font-family: "Gotu-Regular";
             src: url("/fonts/Gotu-Regular.ttf") format("ttf");
         }
-        color: 
+        /* color: ; */
+}
+.overview img{
+    
 }

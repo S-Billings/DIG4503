@@ -25,11 +25,13 @@ render(){
                 <input className={styles.input} type="text" id="pokemonName"/>
                 <button className ={styles.button} onClick={() => {this.getName()}}>Search</button>
                 <div className={styles.links}>
-                    <Link href= "/pokeId"><a>Click here to search by Id</a></Link>
+                    <Link href= "/pokeId"><a className={styles.pokeId}>Click here to search by Id</a></Link>
                     <br></br>
-                    <Link href= "/pokeType"><a>Click here to search by Type</a></Link>
+                    <Link href= "/pokeType"><a className={styles.pokeType}>Click here to search by Type</a></Link>
+                    <br></br>
+                    <Link href="/"><a className={styles.begin}>Click here to go back to the home page</a></Link>
                 </div>
-                <div id="results" className={styles.result}></div>
+                <div id="results" className={styles.result}>Your Results:</div>
         </div>
 
     )

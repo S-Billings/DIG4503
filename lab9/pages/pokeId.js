@@ -26,11 +26,14 @@ class App extends React.Component{
                 <button className ={styles.button} onClick={() => {this.getId()}}>Search</button>
                 
                 <div className={styles.links}>
-                    <Link href="/pokeName">Click here to search by name</Link>
+                    <Link href="/pokeName"><a className={styles.pokeName}>Click here to search by name</a></Link>
                     <br></br>
-                    <Link href = "/pokeType">Click here to search by types</Link>
+                    <Link href = "/pokeType"><a className={styles.pokeType}>Click here to search by types</a></Link>
+                    <br></br>
+                    <Link href="/"><a className={styles.begin}>Click here to go back to the home page</a></Link>
+
                 </div>
-                <div id="results" className={styles.result}></div>
+                <div id="results" className={styles.result}>Your results:</div>
         </div>
         )
     }

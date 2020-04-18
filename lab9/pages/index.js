@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles from "../styling.module.css";
 class App extends React.Component{
 
   
@@ -50,16 +51,16 @@ class App extends React.Component{
 
   render(){
       return(
-          <div className= "home">
-              <Link href="/pokeName">Search Pokemon by Name</Link>
+          <div className= {styles.home}>
+              <Link href="/pokeName"><a className={styles.pokeId}>Search Pokemon by Name</a></Link>
               <br></br>
-              <Link href="/pokeId">Search Pokemon by ID</Link>
+              <Link href="/pokeId"><a className={styles.pokeId}>Search Pokemon by ID</a></Link>
               <br></br>
-              <Link href="/pokeType">Search Pokemon by Type</Link>
+              <Link href="/pokeType"><a className={styles.pokeType}>Search Pokemon by Type</a></Link>
               <hr/>
-              <div className="thanks">
-                 <p>Thanks for checking out my project!</p>
-                 <button>This is what I wanted to make but it wasn't working.</button>
+              <div className= {styles.thanks}>
+                 <p>Thanks for checking out my project! Somthing for your troubles. </p>
+                 
               </div>
           </div>
       )
