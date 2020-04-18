@@ -1,6 +1,6 @@
 import React from 'react';
 
-class HomePage extends React.Component{
+class Homepage extends React.Component{
     render(){
         return(
             <body>
@@ -39,3 +39,5 @@ class HomePage extends React.Component{
         )
     }
 }
+
+export default Homepage;
