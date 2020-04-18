@@ -1,0 +1,12 @@
+body{
+    background-image: url("/images/acBack.jpg");
+
+    
+}
+.intro h1{
+        @font-face{
+            font-family: "Gotu-Regular";
+            src: url("/fonts/Gotu-Regular.ttf") format("ttf");
+        }
+        color: 
+}

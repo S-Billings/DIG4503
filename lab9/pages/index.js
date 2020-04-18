@@ -50,12 +50,17 @@ class App extends React.Component{
 
   render(){
       return(
-          <div class= "home">
+          <div className= "home">
               <Link href="/pokeName">Search Pokemon by Name</Link>
               <br></br>
               <Link href="/pokeId">Search Pokemon by ID</Link>
               <br></br>
               <Link href="/pokeType">Search Pokemon by Type</Link>
+              <hr/>
+              <div className="thanks">
+                 <p>Thanks for checking out my project!</p>
+                 <button>This is what I wanted to make but it wasn't working.</button>
+              </div>
           </div>
       )
   }

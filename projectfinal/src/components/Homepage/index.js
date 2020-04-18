@@ -1,8 +1,5 @@
 import React from 'react';
-import Logo from './images/logo.jpg';
-import Bertha from './images/bertha.png';
-import Erik from '/images/Erik.png';
-import Henry from './images/uglyBitch.png'; 
+import images from './public/images.json';
 
 class Homepage extends React.Component{
     render(){
@@ -10,7 +7,7 @@ class Homepage extends React.Component{
             <body>
                 <div className="intro">
                     <h1>Welcome to Indiga's Website</h1>
-                    <img src={Logo} alt=" animal crossing: new horizon logo"/>
+                    <img  alt=" animal crossing: new horizon logo"/>
                 </div>
                 <div className="overview">
                     <h4>Our Native Fruit</h4>
@@ -26,11 +23,12 @@ class Homepage extends React.Component{
                                 <li>Fuchsia</li>
                                 <img src ="img/Sheldon.png" alt="sheldon a animal crossing villager"/>
                                 <li>Sheldon</li>
-                                <img src={Erik} alt="erik a animal crossing villager"/>
+                                <img alt="erik a animal crossing villager"/>
                                 <li>Erik</li>
-                                <img src={Bertha} alt="bertha a animal crossing villager"/>
+                                {Bertha}
+                                <img alt="bertha a animal crossing villager"/>
                                 <li>Bertha</li>
-                                <img src={Henry} alt="henry a animal crossing villager"/>
+                                <img  alt="henry a animal crossing villager"/>
                                 <li>Henry</li>
                                 <img src="img/Bitch.png" alt= "flora a animal crossing villager"/>
                                 <li>Flora</li>
