@@ -11,6 +11,8 @@ class Homepage extends React.Component{
                     <h4>Our Native Fruit</h4>
                     <img src ="../img/nativeFroot.png" alt="Animal crossing peach"/>
                     <p>Peaches</p>
+                    <h5>Our Current Island Layout</h5>
+                    <img src = "../img/indigaLayout.jpg" alt="Island Map"/>
                     <div>
                         <h4>Meet Our Current Residents!</h4>
                         <div>
@@ -35,6 +37,7 @@ class Homepage extends React.Component{
                         
                         <button onClick="window.location.href= 'https://www.animal-crossing.com/new-horizons/'">Click here to find out our next flights.</button>
                     </div>
+                    
                 </div>
             </body>
         )
