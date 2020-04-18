@@ -32,7 +32,8 @@ class Homepage extends React.Component{
                     </div>
                     <div>
                         <h5>Thinking about joining the Indiga island community?</h5>
-                        <button>Click here to find out our next flights.</button>
+                        
+                        <button onClick="window.location.href= 'https://www.animal-crossing.com/new-horizons/'">Click here to find out our next flights.</button>
                     </div>
                 </div>
             </body>
